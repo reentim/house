@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'entries#index'
+  root to: 'dashboards#show'
 
   resources :entries
 end
