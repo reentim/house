@@ -2,6 +2,8 @@ class Event < ApplicationRecord
   belongs_to :job
 
   enum kind: {
-    completion: 0,
+    created: 0,
+    pending: 1,
+    completed: 2,
   }
 end

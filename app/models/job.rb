@@ -7,11 +7,11 @@ class Job < ApplicationRecord
     }.fetch(events.last.kind)
   end
 
-  def complete?
-    events.last.completion?
+  def completed?
+    events.exists? && events.last.completed?
   end
 
   def complete!
-    events.create! kind: 'completion' unless complete?
+    events.completed.create! unless completed?
   end
 end

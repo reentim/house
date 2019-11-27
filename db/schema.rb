@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2019_11_26_122200) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.text "body"
-    t.integer "kind"
+    t.text "text"
+    t.integer "kind", null: false
     t.bigint "job_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
